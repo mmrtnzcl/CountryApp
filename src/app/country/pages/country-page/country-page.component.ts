@@ -6,10 +6,11 @@ import { of } from 'rxjs';
 import { NotFoundComponent } from "../../../shared/components/not-found/not-found.component";
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { Location } from '@angular/common';
+import { CountryInformationPage } from "./country-information-page/country-information-page";
 
 @Component({
   selector: 'app-country-page',
-  imports: [NotFoundComponent, LoadingComponent],
+  imports: [NotFoundComponent, LoadingComponent, CountryInformationPage],
   templateUrl: './country-page.component.html',
 })
 export class CountryPageComponent {
