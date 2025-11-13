@@ -14,7 +14,7 @@ export class ByCapitalPageComponent {
 
   countrySvc = inject(CountryService);
   query = signal('');
-  coutnryResource = rxResource({
+  countryResource = rxResource({
     request: () => ({ query: this.query() }),
     loader: ({ request }) => {
       if (!request.query) return of([]);

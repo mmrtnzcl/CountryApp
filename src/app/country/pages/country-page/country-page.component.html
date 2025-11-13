@@ -1,1 +1,22 @@
-<p>country-page works!</p>,
+@if(countryResource.isLoading()){
+<app-loading></app-loading>
+}
+@if(countryResource.error()){
+<app-not-found></app-not-found>
+}
+@if(countryResource.hasValue()){
+<div class="flex justify-center mt-5">
+    <div class="card bg-base-100 w-96 shadow-sm">
+        <figure class="px-10 pt-10">
+            <img [src]=countryResource.value().flag alt="flag" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+            <h2 class="card-title">Pais: {{countryResource.value().name}}</h2>
+            <p>{{countryResource.value().flags.alt}}</p>
+            <div class="card-actions">
+                <button (click)="goBack()" class="btn btn-primary">Regresar</button>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -10,6 +10,11 @@ export class CountryMapper {
             name: data.translations["spa"]?.common || data.name.common,
             capital: data.capital ? data.capital.join(', ') : 'N/A',
             population: data.population ? data.population : 0,
+            flags: {
+                png: data.flags.png,
+                svg: data.flags.svg,
+                alt: data.flags.alt || ''
+            }
         };
     }
 
