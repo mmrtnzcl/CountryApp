@@ -23,6 +23,5 @@ export class ByCountryComponent {
       if (!request.query) return of([]);
       return this.countrySvc.searchByCountry(request.query);
     }
-
   })
 }

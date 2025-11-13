@@ -1,8 +1,9 @@
 <section>
     <div class="flex flex-row gap-2">
         <input type="text" name="" id="" class="input input-bordered mr-2 w-52  " autofocus
-            [placeholder]="placeholder()" #txtSearch (keyup.enter)="value.emit(txtSearch.value)" />
-        <button class="btn btn-primary" (click)="value.emit(txtSearch.value)">Buscar</button>
+            [placeholder]="placeholder()" #txtSearch (keyup.enter)="value.emit(txtSearch.value)"
+            (keyup)="inputValue.set(txtSearch.value)" />
+        <button class="btn btn-primary" (click)="inputValue.set(txtSearch.value)">Buscar</button>
     </div>
 
 </section>

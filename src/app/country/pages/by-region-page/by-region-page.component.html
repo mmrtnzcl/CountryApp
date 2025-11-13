@@ -1,2 +1,13 @@
-<country-list [countries]="countries()">
-    < />
+<section class="flex flex-row flex-wrap gap-2 mb-4 justify-center">
+
+    @for (region of regions; track region) {
+    <button class="btn btn-outline btn-secondary rounded-2xl shadow-2xl"
+        [class.btn-active]="region === selectedRegion()" (click)="selectRegion(region)">
+        {{ region }}
+    </button>
+    }
+
+</section>
+
+<country-list [isLoading]="countryResource.isLoading()" [isEmpty]="!countryResource.isLoading() && (countryResource.value()?.length === 0)
+    " [errorMessage]="countryResource.error()" [countries]="countryResource.value() ?? []"></country-list>
